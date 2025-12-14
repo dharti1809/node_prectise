@@ -1,0 +1,16 @@
+{
+  "name": "node_prectise",
+
+  "version": "1.0.0",
+  "description": "node and express series",
+  "main": "first.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dharti solanki",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "express": "^5.1.0"
+  }
+}
