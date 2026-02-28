@@ -1,7 +1,11 @@
 import express from 'express';
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
+
+import path from 'path';
+import { fileURLToPath } from "url";
 import {PORT} from "./env.js";
-dotenv.config();
+
+// dotenv.config();
 
 // npm install dotenv  ---------run in terminal for setup this file
 const app = express();
@@ -14,11 +18,11 @@ app.get('/', (req, res) =>
     res.send('<h1>Hello world</h1>'));
 
 app.get('/about', (req, res) => {
-    res.send('<h1>This is about page</h1>');
+    return res.send('<h1>This is about page</h1>');
 })
 
-app.get('/contact', (req,res) => {
-   res.send(`<div class="passwordDiv">
+app.get('/contacts', (req,res) => {
+    return res.send(`<div class="passwordDiv">
         <h3 class="mb-1 fw-bold">Welcome to Node! 👋</h3>
         <p class="mb-4">Please sign-in to your account</p>
 
@@ -53,8 +57,28 @@ app.get('/contact', (req,res) => {
             </div>
         </form>
     </div>`)
- })
+ });
 
+
+app.get('/hi', (req,res) => {
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+    // console.log(__dirname);
+    // console.log(__filename); //its not working in ES module
+    
+    // console.log(import.meta.dirname);
+    // console.log(import.meta.url); // its give file path with file:// protocol
+    // const __filename = new URL(import.meta.url).pathname;
+    // console.log(__filename);
+    // return res.send("hello");
+    // const __filename = fileURLToPath(import.meta.url);
+    // const __dirname = path.dirname(__filename);
+
+
+    const pagepath = path.join(__dirname, "public", 'index.html');
+    res.sendFile(pagepath);
+})
+ //you can also set port in Terminal
 // const PORT = process.env.PORT || 3000; // --use this line to set port dynamically from environment variable
 
 // set PORT=3000 && node --watch app.js  //--use in cmd for set port
@@ -70,6 +94,7 @@ app.get('/contact', (req,res) => {
 
  // "dev": "node --watch app.js"  // in package.json for auto restart server include in scripts
 // const PORT = 3000;
+// const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 })

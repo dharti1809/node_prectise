@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Aarav Sharma",
+    "email": "aarav.sharma@example.com",
+    "phone": "+91-9876543210",
+    "city": "Ahmedabad"
+  },
+  {
+    "id": 2,
+    "name": "Priya",
+    "email": "priya.patel@example.com",
+    "phone": "+91-9123456780",
+    "city": "Surat"
+  },
+  {
+    "id": 3,
+    "name": "Rohan Mehta",
+    "email": "rohan.mehta@example.com",
+    "phone": "+91-9988776655",
+    "city": "Vadodara"
+  },
+  {
+    "id": 4,
+    "name": "Neha Verma",
+    "email": "neha.verma@example.com",
+    "phone": "+91-9012345678",
+    "city": "Rajkot"
+  },
+  {
+    "id": 5,
+    "name": "Kunal Desai",
+    "email": "kunal.desai@example.com",
+    "phone": "+91-9090909090",
+    "city": "Mumbai"
+  }
+]
